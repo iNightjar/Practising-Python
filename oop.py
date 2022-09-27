@@ -24,3 +24,6 @@ class Pets:
 elearning = instructors("Becoming a linux developer") 
 bls = instructors("Django for begineers")
 elearning.printinfo()
+
+print(elearning.course) # will print the value of the course attribute
+
