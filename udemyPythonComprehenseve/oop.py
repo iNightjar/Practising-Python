@@ -41,3 +41,23 @@ courseInWebsite.duration= "30 Hours"
 courseInWebsite.printCourseInfo()
 print(courseInWebsite.courseName)
 print(courseInWebsite.duration)
+
+# Deleting attributes
+# del courseInWebsite.duration
+# print(courseInWebsite.duration)
+
+
+# class variables VS instance variables
+# Inheritance
+
+class person:
+    # constructors
+    def __init__ (self, fname, lname):
+        self.firstName = fname
+        self.lastName = lname
+
+    def printName(self):
+        print(self.firstName, self.lastName)
+
+florist = person("jane", "flowers")
+florist.printName()
