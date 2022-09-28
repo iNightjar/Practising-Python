@@ -59,5 +59,18 @@ class person:
     def printName(self):
         print(self.firstName, self.lastName)
 
-florist = person("jane", "flowers")
-florist.printName()
+# florist = person("jane", "flowers")
+# florist.printName()
+
+
+class lawyers(person):
+    # the child's personal constructors
+    def __init__ (self, fname, lname):
+        self.firstName = fname
+        self.lastName = lname
+
+    def printInfo(self):
+        print(self.firstName, self.lastName)
+
+happy_lawyers = lawyers("jack", "smiley")
+happy_lawyers.printInfo()
