@@ -16,7 +16,7 @@ class instructors:
         self.duration = duration
 
     def printCourseInfo(self):
-        print("My Company Name is: ", instructors.companyName)
+        print("My Company Name is:", instructors.companyName)
         # print("The Course Name: ", instructors.courseName)
         # print("The Course Duration: ", instructors.duration)
         # print("\n")
@@ -36,6 +36,7 @@ class Pets:
 # print(elearning.duration)
 
 
+
 # modifying classed, adding attributes
 # adding duration attribute to instructors class
 courseInWebsite = instructors("Introduction To FreeLancing", "8 Hours")
@@ -48,6 +49,12 @@ print(courseInWebsite.duration)
 # Deleting attributes
 # del courseInWebsite.duration
 # print(courseInWebsite.duration)
+
+
+
+
+
+
 
 
 # class variables VS instance variables
@@ -78,12 +85,69 @@ class lawyers(person):
 
 
     def printInfo(self):
-        print(self.firstName, self.lastName)
+        print("Hello my name is: ", self.firstName, self.lastName)
 
 
 happy_lawyers = lawyers("jack", "smiley", "criminal")
 # happy_lawyers.printInfo() # function inside the lawyers child
 happy_lawyers.printName()
-
-
+#print(happy_lawyers.casetype)
+# printing info after adding the "Hello" sintance
+happy_lawyers.printInfo()
 print(happy_lawyers.casetype)
+
+
+
+
+
+
+# Polymorphism
+# the ability of having various forms
+print(len("hello")) # len() will print the number ofletters
+print(len([20,40,60])) # len() will print number of elements
+
+
+# polimophic function
+def addNumber(a,b,c=1):
+    return a + b + c
+
+print(addNumber(8,9)) # will prnt 18
+print(addNumber(8,9,4))
+
+
+
+# Polymorphism class with methods
+
+class uk():
+    def capital_city(self):
+        print("london is the capital of uk")
+
+    def langauge(self):
+        print("english is the primary languag of uk")
+
+
+class spain():
+    def capital_city(self):
+        print("madrid is the capital of spain")
+
+    def langauge(self):
+        print("spanish is the primary languag of spain")
+
+
+def europe(sme7):
+    sme7.capital_city()
+
+#instansing
+queen = uk()
+# # queen.capital_city()
+
+zara = spain()
+# # zara.capital_city
+
+europe(queen)
+europe(zara)
+
+# for coutry in (queen, zara):
+#     coutry.capital_city()
+#     coutry.langauge()
+
