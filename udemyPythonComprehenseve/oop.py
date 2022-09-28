@@ -3,11 +3,13 @@
 from cgi import print_directory
 from platform import system_alias
 
-## OOP Seciton 11
+# OOP Seciton 11
+
+
 class instructors:
-    companyName= "TECH ACADEMY"
-    
-    def __init__(self,courseName, duration): # __init__  --> is the initializer
+    companyName = "TECH ACADEMY"
+
+    def __init__(self, courseName, duration):  # __init__  --> is the initializer
         # (self) parameter is used to aceess the variables and methods
         # that belongs to the class
         self.courseName = courseName
@@ -20,12 +22,13 @@ class instructors:
         # print("\n")
 
 # a class with no methods
+
 class Pets:
     pass            # build-in
 
 
 # instantiating object of the class
-# elearning = instructors("Becoming a linux developer",7) 
+# elearning = instructors("Becoming a linux developer",7)
 # bls = instructors("Django for begineers")
 # elearning.printCourseInfo()
  # will print the value of the course attribute
@@ -36,8 +39,8 @@ class Pets:
 # modifying classed, adding attributes
 # adding duration attribute to instructors class
 courseInWebsite = instructors("Introduction To FreeLancing", "8 Hours")
-courseInWebsite.courseName= "Linux Machines Decoding"
-courseInWebsite.duration= "30 Hours"
+courseInWebsite.courseName = "Linux Machines Decoding"
+courseInWebsite.duration = "30 Hours"
 courseInWebsite.printCourseInfo()
 print(courseInWebsite.courseName)
 print(courseInWebsite.duration)
@@ -51,26 +54,36 @@ print(courseInWebsite.duration)
 # Inheritance
 
 class person:
-    # constructors
-    def __init__ (self, fname, lname):
+    # constructors of the parent class
+    def __init__(self, fname, lname):
         self.firstName = fname
         self.lastName = lname
 
     def printName(self):
         print(self.firstName, self.lastName)
 
-# florist = person("jane", "flowers")
-# florist.printName()
+
+florist = person("jane", "flowers")
+florist.printName()
+# florist.printName() # printInfo() can be called by the child only
 
 
 class lawyers(person):
     # the child's personal constructors
-    def __init__ (self, fname, lname):
-        self.firstName = fname
-        self.lastName = lname
+    def __init__(self, fname, lname, casetype):
+        person.__init__(self,fname,lname)
+        # self.firstName = fname
+        # self.lastName = lname
+        self.casetype= casetype
+
 
     def printInfo(self):
         print(self.firstName, self.lastName)
 
-happy_lawyers = lawyers("jack", "smiley")
-happy_lawyers.printInfo()
+
+happy_lawyers = lawyers("jack", "smiley", "criminal")
+# happy_lawyers.printInfo() # function inside the lawyers child
+happy_lawyers.printName()
+
+
+print(happy_lawyers.casetype)
