@@ -151,3 +151,71 @@ europe(zara)
 #     coutry.capital_city()
 #     coutry.langauge()
 
+
+# encapsulation
+# restricting access to methods and variables to prevent direct data modification
+
+class cars:
+    def __init__(self, speed, color):
+        self.__speed = speed
+        self.__color = color
+    
+    # setter and getter for speed
+    def setSpeed(self, value):
+        self.__speed = value
+
+    def getSpeed(self):
+        return self.__speed
+    
+    # setter and getter for color
+    def setColor(self, value):
+        self.__color = value
+
+    def getColor(self):
+        return self.__color
+
+ford = cars(250, "green")
+nissan = cars(300, "red")
+bmw = cars(350, "black")
+
+# ford.speed = 200 # will print error 
+# changing a vlaue of a parameter with a setSpeed method, applying encapsulation
+ford.setSpeed(46)
+print(ford.getSpeed())
+
+# changing the color attribute cant' be done because it's a private attribute
+ford.setColor("yellow")
+print(ford.getColor())
+
+
+# abstraction
+# using ABC module to provide abtraction
+from abc import ABC, abstractclassmethod, abstractmethod
+class shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimeter(self):
+        pass
+
+ # providing implementation by the subclasses 
+class square(shape):
+    def __init__(self, side):
+        self.__side = side
+    
+   
+    def area(self):
+        return self.__side * self.__side
+
+    def perimeter(self):
+        return 4 * self.__side
+
+
+# myshape = shape()
+mysquare = square(5)
+
+# printing the value returned the area and perimeter of the square
+print(mysquare.area())
+print(mysquare.perimeter())
