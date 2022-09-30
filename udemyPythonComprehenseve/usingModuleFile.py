@@ -1,7 +1,7 @@
 # import salute
 # referancing
 
-from salute import fruits
+from udemyPythonComprehenseve.salute import fruits
 
 
 # salute.sayHello("iNightjar")
