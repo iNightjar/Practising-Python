@@ -1,4 +1,4 @@
-## Python CPractices
+## Python Practices
 ```
 You may find some modifications in codes ...
 ```
